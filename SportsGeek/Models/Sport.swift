@@ -5,15 +5,22 @@
 //  Created by Janith Ganepola on 2025-04-21.
 //
 
-import Foundation
+import SwiftUI
 
 struct Sport: Identifiable {
     let id: SportType
     let name: String
     let icon: String // SF Symbol name
+    let themeColor: Color
+    let coverPhoto: String
+    let quote: String
 }
 
 enum SportType {
     case cricket
     case football
+    case rugby
+    case volleyball
+    case tennis
+    case hockey
 }

@@ -7,14 +7,17 @@
 
 import Foundation
 
-// Protocol for abstraction
 protocol SportRepositoryProtocol {
     func getAllSports() -> [Sport]
+    func getSport(by id: SportType) -> Sport?
 }
 
-// Static implementation for now
 struct SportRepository: SportRepositoryProtocol {
     func getAllSports() -> [Sport] {
         return SportsData.sports
+    }
+    
+    func getSport(by id: SportType) -> Sport? {
+        SportsData.sports.first { $0.id == id }
     }
 }
