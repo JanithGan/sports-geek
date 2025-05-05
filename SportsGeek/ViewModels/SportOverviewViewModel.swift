@@ -26,6 +26,15 @@ final class SportOverviewViewModel: ObservableObject {
 
     private func loadData(id: SportType) {
         sport = sportRepository.getSport(by: id)
-        tournaments = tournamentRepository.getTournaments(for: id)
+        Task {
+            await fetchTournaments(for: id)
+        }
+    }
+    
+    func fetchTournaments(for id: SportType) async {
+        do {
+            let data = try await tournamentRepository.getTournaments(for: id)
+            self.tournaments = data
+        } catch { }
     }
 }

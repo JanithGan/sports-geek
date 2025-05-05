@@ -8,12 +8,34 @@
 import Foundation
 
 protocol TournamentRepositoryProtocol {
-    func getTournaments(for sportId: SportType) -> [Tournament]
+    func getTournaments(for sportId: SportType) async throws -> [Tournament]
 }
 
 struct TournamentRepository: TournamentRepositoryProtocol {
-    func getTournaments(for sportId: SportType) -> [Tournament] {
-        // To be replaced with a service call
-        return [Tournament(name: "Tour 1"), Tournament(name: "Tour 2"), Tournament(name: "Tour 3")]
+    private let networkService: NetworkServiceProtocol
+    
+    init(networkService: NetworkServiceProtocol = NetworkService()) {
+        self.networkService = networkService
+    }
+    
+    func getTournaments(for sportId: SportType) async throws -> [Tournament] {
+        var tournamentList: [Tournament] = []
+        
+        // Fetch request
+        var request: TournamentListRequest?
+        switch sportId {
+        case .cricket:
+            request = TournamentListRequest.cricket
+        default:
+            break
+        }
+        
+        // Send request
+        if let request = request {
+            let response: TournamentListResponseDTO = try await networkService.request(endpoint: request)
+            tournamentList = response.tournaments.mapToList()
+        }
+
+        return tournamentList
     }
 }
