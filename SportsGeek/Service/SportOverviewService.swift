@@ -5,6 +5,8 @@
 //  Created by Pramuditha Sirisena on 2025-04-22.
 //
 
+import Foundation
+
 class SportOverviewService {
     static let shared = SportOverviewService()
 

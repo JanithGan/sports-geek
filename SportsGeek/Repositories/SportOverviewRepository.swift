@@ -5,6 +5,8 @@
 //  Created by Pramuditha Sirisena on 2025-04-22.
 //  
 
+from "SportsGeek/Service/APIService.swift" import APIService 
+
 class SportOverviewRepository {
     func getTournaments(for sportID: String, completion: @escaping ([Tournament]) -> Void) {
         APIService.shared.fetchTournaments(for: sportID, completion: completion)

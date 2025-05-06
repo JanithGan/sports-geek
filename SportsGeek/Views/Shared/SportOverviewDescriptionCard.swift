@@ -5,6 +5,8 @@
 //  Created by Pramuditha Sirisena on 2025-04-20.
 //
 
+import SwiftUI
+
 struct SportOverviewDescriptionCard: View {
     let imageName: String
     let title: String

@@ -33,6 +33,9 @@ struct SportsData {
             id: .basketball,
             name: "Basketball",
             icon: "basketball", 
+            themeColor: .green,
+            coverPhoto: "basketball",
+            quote: "Talent wins games, but teamwork and intelligence wins championships.", 
             imageName: "basketball_image.png", 
             description: "Fast-paced team sport with a global fan base."
         ),
@@ -42,7 +45,9 @@ struct SportsData {
             icon: "rugbyball",
             themeColor: .orange,
             coverPhoto: "rugby",
-            quote: "Brutal beauty—where heart, grit, and tackles collide."
+            quote: "Brutal beauty—where heart, grit, and tackles collide.", 
+            imageName: "rugby_image.png", 
+            description: "Most popular sport worldwide."
         ),
         Sport(
             id: .volleyball,
@@ -50,7 +55,9 @@ struct SportsData {
             icon: "volleyball",
             themeColor: .red,
             coverPhoto: "volleyball",
-            quote: "Above the net, beneath the pressure—every spike counts."
+            quote: "Above the net, beneath the pressure—every spike counts.", 
+            imageName: "volleyball_image.png", 
+            description: "Most popular sport worldwide."
         ),
         Sport(
             id: .tennis,
@@ -58,7 +65,9 @@ struct SportsData {
             icon: "tennis.racket",
             themeColor: .purple,
             coverPhoto: "tennis",
-            quote: "One court, two minds—precision in every swing."
+            quote: "One court, two minds—precision in every swing.", 
+            imageName: "tennis_image.png", 
+            description: "Most popular sport worldwide."
         ),
         Sport(
             id: .hockey,
@@ -66,7 +75,9 @@ struct SportsData {
             icon: "hockey.puck",
             themeColor: .cyan,
             coverPhoto: "hockey",
-            quote: "Fast sticks, sharp plays—where control commands the turf."
+            quote: "Fast sticks, sharp plays—where control commands the turf.", 
+            imageName: "hockey_image.png", 
+            description: "Most popular sport worldwide."
         )
     ]
 }

@@ -5,6 +5,8 @@
 //  Created by Pramuditha Sirisena on 2025-04-20.
 //
 
+import SwiftUI
+
 struct SportOverviewExpandableCard<Content: View>: View {
     let title: String
     @Binding var isExpanded: Bool
