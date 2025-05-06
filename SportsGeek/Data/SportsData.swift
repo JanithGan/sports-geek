@@ -15,7 +15,9 @@ struct SportsData {
             icon: "figure.cricket",
             themeColor: .green,
             coverPhoto: "cricket",
-            quote: "Where patience meets power—every ball tells a story."
+            quote: "Where patience meets power—every ball tells a story.",
+            imageName: "cricket_image.png", 
+            description: "A bat-and-ball game loved across continents."
         ),
         Sport(
             id: .football,
@@ -23,7 +25,16 @@ struct SportsData {
             icon: "soccerball",
             themeColor: .blue,
             coverPhoto: "football",
-            quote: "One game. One goal. A world united by the pitch."
+            quote: "One game. One goal. A world united by the pitch.", 
+            imageName: "football_image.png", 
+            description: "Most popular sport worldwide."
+        ),
+        Sport(
+            id: .basketball,
+            name: "Basketball",
+            icon: "basketball", 
+            imageName: "basketball_image.png", 
+            description: "Fast-paced team sport with a global fan base."
         ),
         Sport(
             id: .rugby,

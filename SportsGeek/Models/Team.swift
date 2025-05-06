@@ -1,13 +1,11 @@
 //
-//  Tournament.swift
+//  Team.swift
 //  SportsGeek
 //
 //  Created by Pramuditha Sirisena on 2025-04-21.
 //
 
-import Foundation
-
-struct Tournament: Codable, Identifiable {
+struct Team: Codable, Identifiable {
     let id: String
     let name: String
 }
