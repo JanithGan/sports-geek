@@ -52,7 +52,18 @@ struct SportOverviewView: View {
                     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
 
                     // Tournaments Section
-                    CollapsibleSectionView(title: "Tournaments", items: viewModel.tournaments.map { $0.name }, isCollapsed: false)
+                    CollapsibleSectionView(
+                        title: "Tournaments", 
+                        items: viewModel.tournaments.map { $0.name }, 
+                        isCollapsed: false
+                    ) { tournament in
+                        AnyView(
+                            NavigationLink(destination: SeriesView(tournamentName: tournament.name)) {
+                                Text(tournament.name)
+                                    .padding(.leading)
+                            }
+                        )
+                    }
 
                     // Players Section
                     CollapsibleSectionView(title: "Players", items: viewModel.players)

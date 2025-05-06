@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GameListView: View {
+struct MatchesView: View {
     let seriesTitle: String
     let year: String
 
@@ -59,5 +59,5 @@ struct GameCardView: View {
 }
 
 #Preview{
-    GameListView(seriesTitle: "ODI Series Ban vs SL", year: "2025")
+    MatchesView(seriesTitle: "ODI Series Ban vs SL", year: "2025")
 }

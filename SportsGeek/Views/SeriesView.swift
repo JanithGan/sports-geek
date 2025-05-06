@@ -4,7 +4,7 @@ struct SeriesCardView: View {
     let series: SportsSeries
 
     var body: some View {
-        NavigationLink(destination: GameListView(seriesTitle: series.name, year: series.year)) {
+        NavigationLink(destination: MatchesView(seriesTitle: series.name, year: series.year)) {
             VStack(alignment: .leading, spacing: 8) {
                 Text(series.name)
                     .font(.headline)
@@ -42,7 +42,7 @@ struct SeriesView: View {
             ScrollView {
                 VStack(spacing: 16) {
                     // First card is tappable and navigates
-                    NavigationLink(destination: GameListView(seriesTitle: mockSeriesList[0].name, year: mockSeriesList[0].year)) {
+                    NavigationLink(destination: MatchesView(seriesTitle: mockSeriesList[0].name, year: mockSeriesList[0].year)) {
                         SeriesCardView(series: mockSeriesList[0])
                     }
 
