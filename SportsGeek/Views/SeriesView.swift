@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import SportsGeek.Models.Series
-import SportsGeek.Views.Shared.SeriesCardView
 
 struct SeriesView: View {
     // Mock series data
