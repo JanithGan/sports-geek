@@ -38,5 +38,5 @@ struct EditionsView: View {
 }
 
 #Preview {
-    EditionsView(tournament: Tournament(id: "1", name: "Tour 1", sportId: .cricket))
+    //EditionsView(tournament: Tournament(id: "1", name: "Tour 1", sportId: .cricket))
 }

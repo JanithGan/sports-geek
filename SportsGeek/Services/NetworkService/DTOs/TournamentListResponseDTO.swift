@@ -10,7 +10,7 @@ import Foundation
 extension Array where Element == TournamentDTO {
     func mapToList(sportId: SportType) -> [Tournament] {
         return self.map { dto in
-            Tournament(id: dto.id, name: dto.name, sportId: sportId)
+            Tournament(id: dto.id, name: dto.name)
         }
     }
 }

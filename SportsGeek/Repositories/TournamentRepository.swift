@@ -42,7 +42,7 @@ struct TournamentRepository: TournamentRepositoryProtocol {
     
     func getTournamentEditions(for sportId: SportType, tournamentId: String) -> [Edition] {
         // Refactor: fetch from API
-        var EditionsList: [Edition] = [
+        let EditionsList: [Edition] = [
             Edition(
                 id: "1",
                 tournamentId: "Tour 1",
@@ -66,4 +66,24 @@ struct TournamentRepository: TournamentRepositoryProtocol {
         
         return EditionsList
     }
-}
+    
+    func getMatches(for editionId: String) -> [Match] {
+        // Refactor: fetch from API
+        let matches: [Match] = [
+            Match(
+                id: "1",
+                team1: "Sri Lanka",
+                team2: "Bangaladesh",
+                date: "2025-02-21",
+                venue: "Premadasa"
+            ),
+            Match(
+                id: "2",
+                team1: "India",
+                team2: "New Zealand",
+                date: "2025-02-23",
+                venue: "Dambulla"
+            )]
+        
+        return matches
+    }}

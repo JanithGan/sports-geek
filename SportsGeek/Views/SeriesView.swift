@@ -43,5 +43,5 @@ struct SeriesView: View {
 }
 
 #Preview{
-    SeriesView()
+    //SeriesView(1)
 }
