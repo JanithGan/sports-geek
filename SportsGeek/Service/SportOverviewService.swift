@@ -7,7 +7,13 @@
 
 import Foundation
 
-class SportOverviewService {
+protocol SportOverviewServiceProtocol {
+    func fetchTournaments(for sportID: String, completion: @escaping ([Tournament]) -> Void)
+    func fetchTeams(for sportID: String, completion: @escaping ([Team]) -> Void)
+    func fetchPlayers(for sportID: String, completion: @escaping ([Player]) -> Void)
+}
+
+class SportOverviewService : SportOverviewServiceProtocol {
     static let shared = SportOverviewService()
 
     func fetchTournaments(for sportID: String, completion: @escaping ([Tournament]) -> Void) {

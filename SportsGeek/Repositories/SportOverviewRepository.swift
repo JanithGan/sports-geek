@@ -8,15 +8,21 @@
 import Foundation
 
 class SportOverviewRepository {
+    private let service: SportOverviewServiceProtocol
+
+    init(service: SportOverviewServiceProtocol = SportOverviewService.shared) {
+        self.service = service
+    }
+
     func getTournaments(for sportID: String, completion: @escaping ([Tournament]) -> Void) {
-        SportOverviewService.shared.fetchTournaments(for: sportID, completion: completion)
+        service.fetchTournaments(for: sportID, completion: completion)
     }
 
     func getTeams(for sportID: String, completion: @escaping ([Team]) -> Void) {
-        SportOverviewService.shared.fetchTeams(for: sportID, completion: completion)
+        service.fetchTeams(for: sportID, completion: completion)
     }
 
     func getPlayers(for sportID: String, completion: @escaping ([Player]) -> Void) {
-        SportOverviewService.shared.fetchPlayers(for: sportID, completion: completion)
+        service.fetchPlayers(for: sportID, completion: completion)
     }
 }
