@@ -1,0 +1,16 @@
+//
+//  Config.xcconfig
+//  SportsGeek
+//
+//  Created by Janith Ganepola on 2025-05-05.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+
+// Base URL
+BASE_URL = api.sportradar.com
+
+// Add Secrets
+
