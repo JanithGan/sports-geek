@@ -33,16 +33,16 @@ struct FixturesView: View {
 }
 
 #Preview {
-    FixturesView(tournament: Tournament(
-        id: "sr:tournament:2472",
-        name: "Indian Premier League",
-        sportId: .cricket
-    ), edition: Edition(
-        id: "sr:edition:2472:2023",
-        tournamentId: "sr:tournament:2472",
-        name: "2023 Indian Premier League",
-        startDate: "2023-03-21",
-        endDate: "2023-05-29",
-        year: "2023"
-    ))
+    // FixturesView(tournament: Tournament(
+    //     id: "sr:tournament:2472",
+    //     name: "Indian Premier League",
+    //     sportId: .cricket
+    // ), edition: Edition(
+    //     id: "sr:edition:2472:2023",
+    //     tournamentId: "sr:tournament:2472",
+    //     name: "2023 Indian Premier League",
+    //     startDate: "2023-03-21",
+    //     endDate: "2023-05-29",
+    //     year: "2023"
+    // ))
 }

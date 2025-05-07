@@ -87,9 +87,9 @@ struct EditionsView: View {
 }
 
 #Preview {
-    EditionsView(tournament: Tournament(
-        id: "sr:tournament:2472",
-        name: "Indian Premier League",
-        sportId: .cricket
-    ))
+    // EditionsView(tournament: Tournament(
+    //     id: "sr:tournament:2472",
+    //     name: "Indian Premier League",
+    //     sportId: .cricket
+    // ))
 }

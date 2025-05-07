@@ -10,5 +10,5 @@ import Foundation
 struct Tournament: Identifiable, Hashable {
     let id: String
     let name: String
-   // let sportId: SportType
+    let sportId: SportType
 }
