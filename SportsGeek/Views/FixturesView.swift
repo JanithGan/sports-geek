@@ -10,25 +10,77 @@ import SwiftUI
 struct FixturesView: View {
     let tournament: Tournament
     let edition: Edition
-
+    
+    @StateObject private var viewModel: FixturesViewModel
+    
+    init(tournament: Tournament, edition: Edition) {
+        self.tournament = tournament
+        self.edition = edition
+        _viewModel = StateObject(wrappedValue: FixturesViewModel(
+        ))
+    }
+    
     var body: some View {
-        VStack(alignment:.leading, spacing: 12) {
-            Text(tournament.name)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-
-            Text(edition.year)
-                .font(.title3)
-                .foregroundColor(.secondary)
-
-            Spacer()
-            
-            UpcomingFeatureView()
-            
-            Spacer()
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(alignment:.leading, spacing: 12) {
+                    VStack(alignment:.leading, spacing: 12) {
+                        Text(tournament.name)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        
+                        Text(edition.year)
+                            .font(.title3)
+                            .foregroundColor(.secondary)
+                        
+                        if viewModel.fixturesState.isLoading {
+                            VStack(spacing: -8) {
+                                ForEach(0..<3, id: \.self) { _ in
+                                    CardView(heading: "", infoItems: [], isLoading: true)
+                                }
+                            }
+                            .frame(minHeight: geometry.size.height * 0.7)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        } else if let error = viewModel.fixturesState.errorMessage {
+                            VStack {
+                                Text(error)
+                                    .foregroundColor(.red)
+                                    .multilineTextAlignment(.center)
+                                    .padding(.vertical)
+                            }
+                            .frame(minHeight: geometry.size.height * 0.7)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        } else if viewModel.fixturesState.items.isEmpty {
+                            VStack {
+                                Text("No data found")
+                                    .foregroundColor(.gray)
+                                    .padding(.vertical)
+                            }
+                            .frame(minHeight: geometry.size.height * 0.7)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        } else {
+                            VStack(spacing: 16) {
+                                ForEach(viewModel.fixturesState.items) { fixture in
+                                    CardView(
+                                        heading: fixture.name,
+                                        infoItems: [
+                                            ("Date", fixture.date),
+                                            ("Venue", fixture.venue),
+                                            ("Won By", fixture.wonBy)
+                                        ],
+                                        tint: .blue
+                                    )
+                                }
+                            }
+                            
+                        }
+                    }
+                    .frame(minHeight: geometry.size.height, alignment: .top)
+                }
+            }
+            .padding()
+            .navigationTitle("Editions")
         }
-        .padding(32)
-        .navigationTitle("Fixtures")
     }
 }
 
