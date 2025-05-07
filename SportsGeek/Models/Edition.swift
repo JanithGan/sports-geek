@@ -2,14 +2,13 @@
 //  Edition.swift
 //  SportsGeek
 //
-//  Created by Janith Ganepola on 2025-05-07.
+//  Created by Pramuditha Sirisena on 2025-04-27.
 //
 
 struct Edition: Identifiable {
     let id: String
     let tournamentId: String
     let name: String
-    
     let startDate: String
     let endDate: String
     let year: String

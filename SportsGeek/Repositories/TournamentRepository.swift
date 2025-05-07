@@ -75,14 +75,14 @@ struct TournamentRepository: TournamentRepositoryProtocol {
                 team1: "Sri Lanka",
                 team2: "Bangaladesh",
                 date: "2025-02-21",
-                venue: "Premadasa"
+                venue: "Keththarama Stadium"
             ),
             Match(
                 id: "2",
                 team1: "India",
                 team2: "New Zealand",
                 date: "2025-02-23",
-                venue: "Dambulla"
+                venue: "Dambulla Stadium"
             )]
         
         return matches

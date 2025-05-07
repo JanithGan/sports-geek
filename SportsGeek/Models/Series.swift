@@ -9,6 +9,7 @@ import Foundation
 
 struct Series: Identifiable, Codable {
     var id: String
+    let tournamentId: String
     var name: String
     var startDate: String
     var endDate: String

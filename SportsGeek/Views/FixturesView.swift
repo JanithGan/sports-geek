@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct EditionsView: View {
-    let tournament: Tournament
+struct FixturesView: View {
+    let edition: Editions
     
     @StateObject private var viewModel = EditionsViewModel()
     
-    init(tournament: Tournament) {
-        self.tournament = tournament
+    init(edition: Editions) {
+        self.edition = edition
     }
     
     var body: some View {
@@ -25,7 +25,7 @@ struct EditionsView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 ForEach(viewModel.editions) { edition in
-                    NavigationLink(destination: FixturesView(seriesTitle: series.name, year: series.year)) {
+                    NavigationLink(destination: MatchesView(seriesTitle: series.name, year: series.year)) {
                         //SeriesCardView(series: series)
                         CardView(
                             heading: edition.name,
@@ -48,5 +48,5 @@ struct EditionsView: View {
 }
 
 #Preview {
-    //EditionsView(tournament: Tournament(id: "1", name: "Tour 1", sportId: .cricket))
+    //FixturesView(tournament: Tournament(id: "1", name: "Tour 1", sportId: .cricket))
 }
