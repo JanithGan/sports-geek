@@ -1,5 +1,5 @@
 //
-//  Tournament.swift
+//  FixturesView.swift
 //  SportsGeek
 //
 //  Created by Pramuditha Sirisena on 2025-05-03.
@@ -19,7 +19,7 @@ struct FixturesView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 20) {
-                Text(tournament.name)
+                Text(edition.name)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -48,5 +48,5 @@ struct FixturesView: View {
 }
 
 #Preview {
-    //FixturesView(tournament: Tournament(id: "1", name: "Tour 1", sportId: .cricket))
+    //FixturesView(edition: Edition(id: "1", name: "Tour 1", sportId: .cricket))
 }
