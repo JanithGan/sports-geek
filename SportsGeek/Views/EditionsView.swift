@@ -25,7 +25,7 @@ struct EditionsView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 ForEach(viewModel.editions) { edition in
-                    NavigationLink(destination: FixturesView(edition: edition.name)) {
+                    NavigationLink(destination: FixturesView(edition: edition)) {
                         //SeriesCardView(series: series)
                         CardView(
                             heading: edition.name,
