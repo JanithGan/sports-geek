@@ -30,7 +30,7 @@ struct DashboardView: View {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(viewModel.sports) { sport in
                         NavigationLink(destination: SportOverviewView(sportId: sport.id)) {
-                            CardView(
+                            CardViewWithIcon(
                                 name: sport.name,
                                 icon: sport.icon,
                                 tint: sport.themeColor

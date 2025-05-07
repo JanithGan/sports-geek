@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Tournament {
+struct Tournament: Identifiable, Hashable {
     let id: String
     let name: String
+    let sportId: SportType
 }
