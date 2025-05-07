@@ -27,6 +27,7 @@ final class NetworkService: NetworkServiceProtocol {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkServiceError.invalidResponse
         }
+//        https://api.sportradar.com/cricket-t2/en/tournaments/sr%3Atournament%3A2472/seasons.json
         
         let statusCode = httpResponse.statusCode
         switch statusCode {

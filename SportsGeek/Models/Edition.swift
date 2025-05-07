@@ -13,6 +13,6 @@ struct Edition: Identifiable {
     let startDate: String
     let endDate: String
     let year: String
-    let host: String
-    let wonBy: String
+    // let host: String
+    // let wonBy: String
 }
