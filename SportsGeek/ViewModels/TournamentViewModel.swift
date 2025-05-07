@@ -11,7 +11,7 @@ class TournamentViewModel: ObservableObject {
     @Published var tournaments: [Tournament] = []
     private let tournamentRepository = TournamentRepository()
 
-    func fetchTournaments(id: SportType) {
+    func fetchTournaments(id: SportType) async {
         let data = try await tournamentRepository.getTournaments(for: id)
         self.tournaments = data
     }
