@@ -52,7 +52,7 @@ struct SportOverviewView: View {
                     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
 
                     // Tournaments Section
-                    CollapsibleSectionView(
+                    CollapsibleSectionViewWithNavigation(
                         title: "Tournaments", 
                         items: viewModel.tournaments.map { $0.name }, 
                         isCollapsed: false
