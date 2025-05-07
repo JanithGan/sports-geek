@@ -12,6 +12,7 @@ struct Series: Identifiable, Codable {
     var name: String
     var startDate: String
     var endDate: String
+    var year:String
     var host: String
     var wonBy: String
 }

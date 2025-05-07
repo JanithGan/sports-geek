@@ -11,7 +11,7 @@ class TournamentViewModel: ObservableObject {
     @Published var tournaments: [Tournament] = []
     private let repository = TournamentRepository()
 
-    func fetchTournaments() {
-        self.tournaments = repository.getTournaments()
+    func fetchTournaments(sportId: SportType) {
+        self.tournaments = repository.getTournaments(for: sportID)
     }
 }
