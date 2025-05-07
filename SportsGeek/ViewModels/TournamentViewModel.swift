@@ -9,7 +9,7 @@ import Foundation
 
 class TournamentViewModel: ObservableObject {
     @Published var tournaments: [Tournament] = []
-    private let repository = TournamentRepository()
+    private let tournamentRepository = TournamentRepository()
 
     func fetchTournaments(id: SportType) {
         let data = try await tournamentRepository.getTournaments(for: id)
