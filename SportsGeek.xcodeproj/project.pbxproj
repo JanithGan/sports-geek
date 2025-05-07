@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		06B48E1F2DC9263300E780CD /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 06B48E1E2DC9263300E780CD /* Config.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		06AD917F2DA83D0C00B9B1E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +31,25 @@
 		06AD91712DA83D0700B9B1E1 /* SportsGeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsGeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06AD917E2DA83D0C00B9B1E1 /* SportsGeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsGeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06AD91882DA83D0C00B9B1E1 /* SportsGeekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsGeekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B48E1E2DC9263300E780CD /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		06E1595A2DC9564200F049E8 /* Exceptions for "SportsGeek" folder in "SportsGeek" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 06AD91702DA83D0700B9B1E1 /* SportsGeek */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		06AD91732DA83D0700B9B1E1 /* SportsGeek */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				06E1595A2DC9564200F049E8 /* Exceptions for "SportsGeek" folder in "SportsGeek" target */,
+			);
 			path = SportsGeek;
 			sourceTree = "<group>";
 		};
@@ -75,6 +93,7 @@
 		06AD91682DA83D0700B9B1E1 = {
 			isa = PBXGroup;
 			children = (
+				06B48E1E2DC9263300E780CD /* Config.xcconfig */,
 				06AD91732DA83D0700B9B1E1 /* SportsGeek */,
 				06AD91812DA83D0C00B9B1E1 /* SportsGeekTests */,
 				06AD918B2DA83D0C00B9B1E1 /* SportsGeekUITests */,
@@ -212,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B48E1F2DC9263300E780CD /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,13 +410,16 @@
 		};
 		06AD91932DA83D0C00B9B1E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B48E1E2DC9263300E780CD /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SportsGeek/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -417,13 +440,16 @@
 		};
 		06AD91942DA83D0C00B9B1E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B48E1E2DC9263300E780CD /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SportsGeek/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -448,6 +474,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
@@ -466,6 +493,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
@@ -483,6 +511,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportsgeek.SportsGeekUITests;
@@ -499,6 +528,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportsgeek.SportsGeekUITests;
