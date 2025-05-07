@@ -14,7 +14,6 @@ final class SportOverviewViewModel: ObservableObject {
     @Published var sport: Sport?
     @Published var tournaments: [Tournament] = []
     @Published var players: [Player] = []
-    @Published var selectedTournament: Tournament?
     
     @Published var tournamentsState = ItemsListSectionState<Tournament>()
     
@@ -37,7 +36,7 @@ final class SportOverviewViewModel: ObservableObject {
         sport = sportRepository.getSport(by: id)
     }
     
-    /// Fetch Tournaments for the given sport
+    /// Fetch tournaments for the given sport
     func fetchTournaments() {
         tournamentsState.isLoading = true
         
@@ -47,7 +46,7 @@ final class SportOverviewViewModel: ObservableObject {
                 
                 // Switch to the main thread before updating the UI
                 DispatchQueue.main.async {
-                    self.tournamentsState.items = Array(allTournaments.prefix(self.MAX_TOURNAMENTS_COUNT))  // Limit to 10 tournaments
+                    self.tournamentsState.items = Array(allTournaments.prefix(self.MAX_TOURNAMENTS_COUNT))  // Limit items
                     self.tournamentsState.isLoading = false
                 }
             } catch {
@@ -58,9 +57,5 @@ final class SportOverviewViewModel: ObservableObject {
                 }
             }
         }
-    }
-    
-    func navigateToTournament(_ tournament: Tournament) {
-        selectedTournament = tournament
     }
 }

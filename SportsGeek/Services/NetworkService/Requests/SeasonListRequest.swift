@@ -1,17 +1,17 @@
 //
-//  TournamentListRequest.swift
+//  SeasonListRequest.swift
 //  SportsGeek
 //
-//  Created by Janith Ganepola on 2025-05-03.
+//  Created by Janith Ganepola on 2025-05-07.
 //
 
 import Foundation
 
-enum TournamentListRequest {
-    case cricket
+enum SeasonListRequest {
+    case cricket(tournamentId: String)
 }
 
-extension TournamentListRequest: NetworkRequest {
+extension SeasonListRequest: NetworkRequest {
     var baseURL: String {
         return APIConstants.baseURLString
     }
@@ -19,14 +19,17 @@ extension TournamentListRequest: NetworkRequest {
     var path: String {
         switch self {
         case .cricket:
-            return "/cricket-t2/en/tournaments.json"
+            return "/cricket-t2/en/tournaments/{tournament_id}/seasons.json"
         }
     }
     
     var pathParams: [String : String] {
         switch self {
-        case .cricket:
-            let params: [String : String] = [:]
+        case .cricket(let tournamentId):
+            let params = [
+                "tournament_id": tournamentId
+            ]
+            
             return params
         }
     }
