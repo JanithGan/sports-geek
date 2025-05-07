@@ -12,7 +12,9 @@ class TournamentViewModel: ObservableObject {
     private let tournamentRepository = TournamentRepository()
 
     func fetchTournaments(id: SportType) async {
-        let data = try await tournamentRepository.getTournaments(for: id)
-        self.tournaments = data
+        do {
+            let data = try await tournamentRepository.getTournaments(for: id)
+            self.tournaments = data
+        } catch { }
     }
 }
