@@ -10,12 +10,12 @@ import SwiftUI
 struct SportOverviewView: View {
     let sportId: SportType
     @StateObject private var viewModel: SportOverviewViewModel
-
+    
     init(sportId: SportType) {
         self.sportId = sportId
         _viewModel = StateObject(wrappedValue: SportOverviewViewModel(id: sportId))
     }
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -24,7 +24,7 @@ struct SportOverviewView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .center)
-
+                    
                     VStack(alignment: .leading, spacing: 12) {
                         GeometryReader { geometry in
                             Image(sport.coverPhoto)
@@ -38,9 +38,9 @@ struct SportOverviewView: View {
                         .padding(.horizontal)
                         
                         Text("“\(sport.quote)”")
-                                .font(.body)
-                                .foregroundColor(.secondary)
-                                .padding(.horizontal)
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal)
                     }
                     .padding()
                     .background(
@@ -50,29 +50,38 @@ struct SportOverviewView: View {
                     .background(Color(.systemBackground))
                     .cornerRadius(16)
                     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
-
+                    
                     // Tournaments Section
-                    CollapsibleSectionViewWithNavigation(
-                        title: "Tournaments", 
-                        items: viewModel.tournaments.map { $0.name }, 
-                        isCollapsed: false
-                    ) { tournament in
-                        AnyView(
-                            NavigationLink(destination: SeriesView(tournamentName: tournament.id)) {
-                                Text(tournament.name)
-                                    .padding(.leading)
-                            }
-                        )
+                    CollapsibleSectionView(
+                        title: "Tournaments",
+                        tint: sport.themeColor,
+                        items: viewModel.tournamentsState.items,
+                        isCollapsed: false,
+                        isLoading: viewModel.tournamentsState.isLoading,
+                        errorMessage: viewModel.tournamentsState.errorMessage,
+                        display: { $0.name },
+                        destination: { tournament in
+                            EditionsView(tournament: tournament)
+                        }
+                    ).onAppear {
+                        viewModel.fetchTournaments()
                     }
-
+                    
                     // Players Section
-                    CollapsibleSectionView(title: "Players", items: viewModel.players)
+                    CollapsibleSectionView(
+                        title: "Players",
+                        items: viewModel.players,
+                        isUpcoming: true,
+                        isLoading: false,
+                        errorMessage: nil,
+                        display: { $0.name },
+                        destination: {_ in EmptyView()}
+                    )
                 }
             }
-            .padding()
         }
+        .padding()
         .navigationTitle("Overview")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
