@@ -58,7 +58,7 @@ struct SportOverviewView: View {
                         isCollapsed: false
                     ) { tournament in
                         AnyView(
-                            NavigationLink(destination: SeriesView(tournamentName: tournament.name)) {
+                            NavigationLink(destination: SeriesView(tournamentName: tournament.id)) {
                                 Text(tournament.name)
                                     .padding(.leading)
                             }
