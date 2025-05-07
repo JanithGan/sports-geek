@@ -61,7 +61,7 @@ struct SportOverviewView: View {
                         errorMessage: viewModel.tournamentsState.errorMessage,
                         display: { $0.name },
                         destination: { tournament in
-                            EditionsView(tournament: tournament)
+                            EditionsView(tournament: tournament, sportId: sportId)
                         }
                     ).onAppear {
                         viewModel.fetchTournaments()

@@ -9,13 +9,15 @@ import SwiftUI
 
 struct EditionsView: View {
     let tournament: Tournament
+    let sportId: SportType
     
     @StateObject private var viewModel: EditionsViewModel
     
-    init(tournament: Tournament) {
+    init(tournament: Tournament, sportId: SportType) {
         self.tournament = tournament
+        self.sportId = sportId
         _viewModel = StateObject(wrappedValue: EditionsViewModel(
-            sportId: tournament.sportId,
+            sportId: sportId,
             tournamentId: tournament.id
         ))
     }
