@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct FixturesView: View {
-    let edition: Editions
+    let edition: Edition
     
     @StateObject private var viewModel = EditionsViewModel()
     
-    init(edition: Editions) {
+    init(edition: Edition) {
         self.edition = edition
     }
     
